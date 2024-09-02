@@ -1,13 +1,7 @@
-*{
-    margin: 0;
-    padding: 0;
-    transition: 0.5s;
-}
-
-body{
+/* Estilos predeterminados (modo oscuro) */
+body {
     height: 100vh;
     padding: 10px;
-
     position: relative;
     background-color: black;
     display: flex;
@@ -15,9 +9,10 @@ body{
     align-items: center;
     flex-direction: column;
     overflow: hidden;
+    transition: background-color 0.5s ease;
 }
 
-#particles-js{
+#particles-js {
     position: absolute;
     top: 0;
     left: 0;
@@ -26,17 +21,38 @@ body{
     opacity: 0.3;
 }
 
-h1{
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 30%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+h1 {
     color: #f2f2f2;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 80px;
-    margin-bottom: 5rem;
     font-weight: 400;
+    white-space: nowrap; /* Asegura que el texto no se divida en varias líneas */
+    overflow: hidden; /* Oculta el texto que excede el ancho del contenedor */
+    border-right: .12em solid rgb(255, 255, 255); /* Color del cursor de tipo escritura */
+    animation: typing 1s steps(34, end), blink .5s step-end infinite alternate;
+    margin-top: 12px;
     z-index: 2;
     pointer-events: none;
 }
 
-.button{
+
+
+.button {
     padding: 10px 18px;
     border: 1px solid #f2f2f2;
     background-color: transparent;
@@ -46,21 +62,83 @@ h1{
     border-radius: 20px;
     outline: none;
     cursor: pointer;
-    z-index: 2;
+    z-index: 9999;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-.button:hover{
+.button:hover {
     color: #121212;
     background-color: #f2f2f2;
 }
-@media  (max-width:650px) {
-    body{
+
+
+#dark-mode-toggle {
+    border: 1px solid #f2f2f2;
+    background-color: transparent;
+    color: #f2f2f2;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    z-index: 9999;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    display: flex;
+    align-items: center; /* Alinea verticalmente el ícono */
+}
+
+#dark-mode-toggle svg {
+    width: 24px; /* Ajusta el tamaño del ícono SVG */
+    height: 24px; /* Ajusta el tamaño del ícono SVG */
+    fill: #ffffff; /* Color blanco */
+}
+
+/* Estilos para el modo claro */
+body.light-mode {
+    background-color: white;
+    color: black;
+}
+
+body.light-mode h1 {
+    color: black;
+}
+
+body.light-mode .button {
+    border: 1px solid #121212;
+    color: #121212;
+}
+
+body.light-mode .button:hover {
+    color: #f2f2f2;
+    background-color: #121212;
+}
+
+body.light-mode #dark-mode-toggle svg {
+    fill: #000000; /* Color blanco */
+    
+}
+body.light-mode #icon-moon {
+    display: block;
+}
+
+
+/* Estilos para los íconos */
+#icon-moon {
+    display: none; /* Visible en modo oscuro */
+}
+
+body.light-mode #icon-sun {
+    display: none; /* Oculto en modo oscuro */
+}
+/* Estilos responsivos */
+@media (max-width: 650px) {
+    body {
         padding: auto;
         margin: auto;
         text-align: center;
     }
-    h1{
-        font-size: 60px;
 
+    h1 {
+        font-size: 60px;
     }
 }
