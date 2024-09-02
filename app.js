@@ -136,3 +136,21 @@ document.addEventListener('DOMContentLoaded', function () {
     loadParticles();
   });
 });
+document.addEventListener('DOMContentLoaded', function () {
+  const typewriter = new Typewriter('#typewriter-text', {
+      loop: true, // Hacer que la animación se repita
+      delay: 75, // Velocidad de tipeo
+  });
+
+  typewriter
+      .typeString('Axel Muñoz Silva')
+      .pauseFor(1000) // Pausa entre textos
+      .deleteAll() // Borra todo el texto
+      .typeString('Lima - Perú')
+      .pauseFor(1000)
+      .deleteAll()
+      .typeString('Developer Full Stack')
+      .pauseFor(1000)
+      .deleteAll()
+      .start();
+});
