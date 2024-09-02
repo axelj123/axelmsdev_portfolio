@@ -23,7 +23,7 @@ body {
 
 @keyframes typing {
     from {
-        width: 0;
+        width: 0px;
     }
     to {
         width: 30%;
@@ -139,6 +139,9 @@ body.light-mode #icon-sun {
     }
 
     h1 {
-        font-size: 60px;
+        font-size: 60px; /* Ajusta el tamaño del texto para pantallas pequeñas */
+        width: 100%; /* Asegura que el texto ocupe el ancho completo del contenedor */
+        white-space: normal; /* Permite que el texto se ajuste en múltiples líneas si es necesario */
+        overflow: visible; /* Muestra el texto completo */
     }
 }
