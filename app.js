@@ -1,8 +1,3 @@
-/* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
-particlesJS.load('particles-js', 'particles.json', function() {
-    console.log('callback - particles.js config loaded');
-  });
-  // app.js
 document.addEventListener('DOMContentLoaded', function () {
   let particleColor = "#ffffff"; // Color blanco para partículas en modo oscuro por defecto
 
@@ -117,15 +112,21 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Inicializa partículas
+  // Leer la preferencia del tema desde localStorage
+  const savedTheme = localStorage.getItem('theme') || 'dark';
+  document.body.classList.toggle('dark-mode', savedTheme === 'dark');
+  document.body.classList.toggle('light-mode', savedTheme === 'light');
+  particleColor = savedTheme === 'dark' ? "#ffffff" : "#000000";
+  // Inicializa partículas con el color del tema guardado
   loadParticles();
 
   // Cambia entre modo oscuro y claro
   document.getElementById('dark-mode-toggle').addEventListener('click', function () {
-    document.body.classList.toggle('light-mode');
-    
+    const isLightMode = document.body.classList.toggle('light-mode');
+    document.body.classList.toggle('dark-mode', !isLightMode);
+
     // Cambia el color de las partículas dependiendo del modo
-    particleColor = document.body.classList.contains('light-mode') ? "#000000" : "#ffffff"; // Negro para claro, blanco para oscuro
+    particleColor = isLightMode ? "#000000" : "#ffffff";
 
     // Destruye partículas existentes y reinicia con el nuevo color
     if (window.pJSDom && window.pJSDom.length) {
@@ -134,23 +135,26 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     loadParticles();
+
+    // Guarda la preferencia del tema en localStorage
+    localStorage.setItem('theme', isLightMode ? 'light' : 'dark');
   });
-});
-document.addEventListener('DOMContentLoaded', function () {
+
+  // Configuración del Typewriter
   const typewriter = new Typewriter('#typewriter-text', {
-      loop: true, // Hacer que la animación se repita
-      delay: 75, // Velocidad de tipeo
+    loop: true, // Hacer que la animación se repita
+    delay: 75, // Velocidad de tipeo
   });
 
   typewriter
-      .typeString('Axel Muñoz Silva')
-      .pauseFor(1000) // Pausa entre textos
-      .deleteAll() // Borra todo el texto
-      .typeString('Lima - Perú')
-      .pauseFor(1000)
-      .deleteAll()
-      .typeString('Developer Full Stack')
-      .pauseFor(1000)
-      .deleteAll()
-      .start();
+    .typeString('Axel Muñoz Silva')
+    .pauseFor(1000) // Pausa entre textos
+    .deleteAll() // Borra todo el texto
+    .typeString('Lima - Perú')
+    .pauseFor(1000)
+    .deleteAll()
+    .typeString('Developer Full Stack')
+    .pauseFor(1000)
+    .deleteAll()
+    .start();
 });
