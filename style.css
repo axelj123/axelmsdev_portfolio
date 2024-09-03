@@ -44,6 +44,7 @@ h1 {
     border-radius: 20px;
     outline: none;
     cursor: pointer;
+    margin-bottom: 300px;
     z-index: 9999;
     transition: background-color 0.5s ease, color 0.5s ease;
     user-select: none;
@@ -72,6 +73,7 @@ h1 {
     user-select: none;
 
 }
+ 
 
 #dark-mode-toggle svg {
     width: 24px; /* Ajusta el tamaño del ícono SVG */
