@@ -19,6 +19,7 @@ body {
     height: 100%;
     width: 100%;
     opacity: 0.3;
+    
 }
 
 h1 {
@@ -44,7 +45,7 @@ h1 {
     border-radius: 20px;
     outline: none;
     cursor: pointer;    
-    z-index: 9999;
+    z-index: 999999;
     transition: background-color 0.5s ease, color 0.5s ease;
     user-select: none;
 
@@ -54,7 +55,9 @@ h1 {
     color: #121212;
     background-color: #f2f2f2;
 }
-
+.presentacion{
+    text-align: center;
+}
 
 #dark-mode-toggle {
     border: 1px solid #f2f2f2;
@@ -70,6 +73,10 @@ h1 {
     display: flex;
     align-items: center; /* Alinea verticalmente el ícono */
     user-select: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+
 
 }
  
