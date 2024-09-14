@@ -1,15 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+
+:root {
+    
+
+    --background-color: white;
+    --text-color: black;
+    --button-border-color: #121212;
+    --button-text-color: #f2f2f2;
+    --button-hover-background: #223ccc;
+    --button-hover-text: #f2f2f2;
+    --icon-fill: #000000;
+}
+
+body.dark-mode {
+    --background-color: #171926;
+    --text-color: #E0E0E0;
+    --button-border-color: #f2f2f2;
+    --button-text-color: #f2f2f2;
+    --button-hover-background: #223ccc;
+    --button-hover-text: #f7f2f2;
+    --icon-fill: #ffffff;
+}
+
 /* Estilos predeterminados (modo oscuro) */
 body {
     height: 100vh;
     padding: 10px;
     position: relative;
-    background-color: black;
+    background-color: var(--background-color);
+    /* Aplica variable de color de fondo */
+    color: var(--text-color);
+    /* Aplica variable de color de texto */
     display: flex;
+    font-family: 'Roboto', sans-serif;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     overflow: hidden;
-    transition: background-color 0.5s ease;
+    transition: background-color 0.1s ease, color 0.1s ease;
 }
 
 #particles-js {
@@ -19,111 +48,158 @@ body {
     height: 100%;
     width: 100%;
     opacity: 0.3;
-    
 }
 
 h1 {
-    color: #f2f2f2;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 80px;
     font-weight: 400;
-    animation: typing 3s steps(34), blink .5s step-end infinite alternate;
     margin-top: 12px;
     z-index: 2;
     pointer-events: none;
     user-select: none;
 }
-
+h2{
+    font-size: 40px;
+}
 
 .button {
-    padding: 10px 18px;
-    border: 1px solid #f2f2f2;
-    background-color: transparent;
-    color: #f2f2f2;
+    padding: 14px;
+    /* Aplica variable de color de borde */
+    background-color: #1e39b2;
+    color: white;
+    /* Aplica variable de color de texto */
     text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif;
-    border-radius: 20px;
+    border-radius: 10px;
     outline: none;
-    cursor: pointer;    
-    z-index: 999999;
-    transition: background-color 0.5s ease, color 0.5s ease;
+    cursor: pointer;
+    position: relative;
+   font-weight: 600;
+    transition: background-color 0.1s ease, color 0.1s ease;
     user-select: none;
-
 }
-
 .button:hover {
-    color: #121212;
-    background-color: #f2f2f2;
+    color: var(--button-hover-text);
+    /* Aplica variable para hover */
+    background-color: var(--button-hover-background);
+    /* Aplica variable para hover */
 }
-.presentacion{
+
+.section {
     text-align: center;
 }
 
+
+
+.presentacion {
+    text-align: center;
+}
+
+.container-about {
+    display: flex;
+    justify-content: center;
+    /* Centra horizontalmente */
+    margin: 2rem 20rem;
+gap: 5%;
+}
+
+.about_cards {
+    display: flex;
+    gap: 2%;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+
+.about_image{
+    background: linear-gradient(45deg, #d3151500, #d3151500, #0000);
+}
+.foto {
+    width: 420px;
+    padding: 20px;
+    border-radius: 60px;
+
+
+}
+.container-about p{
+    text-align: justify;
+    width: 300px;
+    line-height: 1.5rem;
+}
+
 #dark-mode-toggle {
-    border: 1px solid #f2f2f2;
+    border: 1px solid var(--button-border-color);
+    /* Aplica variable de borde */
     background-color: transparent;
-    color: #f2f2f2;
+    color: var(--text-color);
+    /* Aplica variable de texto */
     text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif;
     border: none;
     outline: none;
     cursor: pointer;
     z-index: 9999;
-    transition: background-color 0.5s ease, color 0.5s ease;
+    transition: background-color 0.1s ease, color 0.1s ease;
     display: flex;
-    align-items: center; /* Alinea verticalmente el ícono */
+    align-items: center;
+    /* Alinea verticalmente el ícono */
     user-select: none;
     position: fixed;
     top: 20px;
     right: 20px;
-
-
 }
- 
 
 #dark-mode-toggle svg {
-    width: 24px; /* Ajusta el tamaño del ícono SVG */
-    height: 24px; /* Ajusta el tamaño del ícono SVG */
-    fill: #ffffff; /* Color blanco */
+    width: 24px;
+    /* Ajusta el tamaño del ícono SVG */
+    height: 24px;
+    /* Ajusta el tamaño del ícono SVG */
+    fill: var(--icon-fill);
+    /* Aplica variable de color de ícono */
 }
-
-/* Estilos para el modo claro */
-body.light-mode {
-    background-color: white;
-    color: black;
-}
-
-body.light-mode h1 {
-    color: black;
-}
-
-body.light-mode .button {
-    border: 1px solid #121212;
-    color: #121212;
-}
-
-body.light-mode .button:hover {
-    color: #f2f2f2;
-    background-color: #121212;
-}
-
-body.light-mode #dark-mode-toggle svg {
-    fill: #000000; /* Color blanco */
-    
-}
-body.light-mode #icon-moon {
-    display: block;
-}
-
 
 /* Estilos para los íconos */
 #icon-moon {
-    display: none; /* Visible en modo oscuro */
+    display: none;
+    /* Visible solo en modo oscuro */
 }
 
 body.light-mode #icon-sun {
-    display: none; /* Oculto en modo oscuro */
+    display: none;
+    /* Oculto en modo claro */
 }
+
+
+body.light-mode .button:hover {
+    color: var(--button-hover-text);
+    /* Aplica variable para hover */
+    background-color: var(--button-hover-background);
+    /* Aplica variable para hover */
+}
+
+body.light-mode #dark-mode-toggle svg {
+    fill: var(--icon-fill);
+    /* Cambia el color del ícono */
+}
+
+body.light-mode #icon-moon {
+    display: block;
+    /* Muestra el ícono en modo claro */
+}
+
+body.light-mode #icon-sun {
+    display: none;
+    /* Oculto en modo claro */
+}
+
+footer{
+    margin-bottom: 40px;
+    background-color: var(--background-color);
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.1s ease, color 0.1s ease;
+
+}
+
 /* Estilos responsivos */
 @media (max-width: 650px) {
     body {
