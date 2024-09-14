@@ -2,7 +2,7 @@
 
 
 :root {
-    
+
 
     --background-color: white;
     --text-color: black;
@@ -33,7 +33,7 @@ body {
     color: var(--text-color);
     /* Aplica variable de color de texto */
     display: flex;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Trebuchet MS', Helvetica, Arial, sans-serif;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -59,11 +59,13 @@ h1 {
     pointer-events: none;
     user-select: none;
 }
-h2{
+
+h2 {
     font-size: 40px;
 }
 
 .button {
+
     padding: 14px;
     /* Aplica variable de color de borde */
     background-color: #1e39b2;
@@ -74,10 +76,12 @@ h2{
     outline: none;
     cursor: pointer;
     position: relative;
-   font-weight: 600;
+
+    font-weight: 600;
     transition: background-color 0.1s ease, color 0.1s ease;
     user-select: none;
 }
+
 .button:hover {
     color: var(--button-hover-text);
     /* Aplica variable para hover */
@@ -95,33 +99,73 @@ h2{
     text-align: center;
 }
 
-.container-about {
+
+.container-content{
     display: flex;
     justify-content: center;
     /* Centra horizontalmente */
     margin: 2rem 20rem;
-gap: 5%;
+    gap: 5%;
 }
 
-.about_cards {
+.redes-sociales {
     display: flex;
     gap: 2%;
     justify-content: center;
-    margin-bottom: 100px;
+    margin-bottom:20px;
+}
+.body.light-mode  .social i {
+    color: white;
+}
+.social i {
+    text-align: center;
+    font-size: 24px;
+    /* Ajusta el tamaño del icono aquí */
+    margin: 20px;
+    border-radius: 50%;
+    color: var(--button-hover-background);
+    /* Cambia el color si es necesario */
+    transition: color 0.3s;
+    /* Opcional: Para un efecto de transición en el color */
+    padding: 15px;
+    box-shadow: 0px 5px 10px rgb(0, 0, 0, .35);
+    transition: .3s ease;
 }
 
-
-.about_image{
-    background: linear-gradient(45deg, #d3151500, #d3151500, #0000);
+.fa-linkedin:hover {
+    background-color: #435df3;
+    color: white;
+    box-shadow: 0 0 15px #435df3,
+        0 0 15px #435df3,
+        0 0 55px #435df3,
+        0 0 75px #435df3;
 }
+.fa-github:hover {
+    background-color: #7a0a9c;
+    color: white;
+    box-shadow: 0 0 15px #7a0a9c,
+        0 0 15px #7a0a9c,
+        0 0 55px #7a0a9c,
+        0 0 75px #7a0a9c;
+}
+.fa-instagram:hover {
+    background-color: red;
+    color: white;
+    box-shadow: 0 0 15px red,
+        0 0 15px red,
+        0 0 55px red,
+        0 0 75px red;
+}
+
 .foto {
-    width: 420px;
-    padding: 20px;
+    width: 400px;
     border-radius: 60px;
-
-
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+    margin-right: 20px;
 }
-.container-about p{
+
+
+.container-about p {
     text-align: justify;
     width: 300px;
     line-height: 1.5rem;
@@ -163,35 +207,9 @@ gap: 5%;
     /* Visible solo en modo oscuro */
 }
 
-body.light-mode #icon-sun {
-    display: none;
-    /* Oculto en modo claro */
-}
 
 
-body.light-mode .button:hover {
-    color: var(--button-hover-text);
-    /* Aplica variable para hover */
-    background-color: var(--button-hover-background);
-    /* Aplica variable para hover */
-}
-
-body.light-mode #dark-mode-toggle svg {
-    fill: var(--icon-fill);
-    /* Cambia el color del ícono */
-}
-
-body.light-mode #icon-moon {
-    display: block;
-    /* Muestra el ícono en modo claro */
-}
-
-body.light-mode #icon-sun {
-    display: none;
-    /* Oculto en modo claro */
-}
-
-footer{
+footer {
     margin-bottom: 40px;
     background-color: var(--background-color);
     width: 100%;
@@ -201,7 +219,14 @@ footer{
 }
 
 /* Estilos responsivos */
-@media (max-width: 650px) {
+@media (max-width: 964px) {
+   .foto{
+    width: 300px;
+   }
+
+
+}
+@media (max-width: 740px) {
     body {
         padding: auto;
         margin: auto;
@@ -211,4 +236,17 @@ footer{
     h1 {
         font-size: 60px;
     }
+    
+ .container-about{
+    display: grid;
+    justify-content: center;
+ }
+ .container-content{
+    display: grid;
+ }
+
+    .foto{
+        width: 180px;
+       }
+ 
 }
