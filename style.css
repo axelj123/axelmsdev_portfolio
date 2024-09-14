@@ -224,7 +224,6 @@ footer {
     width: 300px;
    }
 
-
 }
 @media (max-width: 740px) {
     body {
@@ -248,5 +247,11 @@ footer {
     .foto{
         width: 180px;
        }
+       h2 {
+        font-size: 30px;
+    }
+    p{
+        font-size: 12px;
+    }
  
 }
