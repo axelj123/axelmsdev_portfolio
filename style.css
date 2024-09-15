@@ -221,12 +221,13 @@ h2 {
     display: none;
     /* Visible solo en modo oscuro */
 }
-.section{
-}
+
 
 /* ---------------------------------------SKILLS-------------------------------- */
-#contact-heading{
-    margin-bottom: 2rem;
+
+.skills_content p{
+    color: #616c80;
+    line-height: 1.5rem;
 }
 .grid-tecnologias {
     display: grid;
@@ -351,16 +352,12 @@ footer {
         font-size: 14px;
     }
 
-    .grid-tecnologias{
-        margin: 20px;
-    }
-    #skills p{
-        padding: 10px;
-
-    }
+   
+ 
     .grid-skill{
         padding: 5px;
 
     }
+    
     
 }
