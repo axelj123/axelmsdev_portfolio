@@ -234,6 +234,9 @@ h2 {
 #skills p{
     font-size: 16px;
     margin-bottom: 3rem;
+    color: #616c80;
+    padding: 10px;
+
 }
 
 .grid-skill {
@@ -341,4 +344,8 @@ footer {
         font-size: 14px;
     }
 
+    .grid-tecnologias{
+        margin: 20px;
+    }
+ 
 }
