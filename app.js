@@ -171,3 +171,6 @@ function toggleSkills(element) {
       icon.classList.add("rotate");
   }
 }
+
+
+
