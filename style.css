@@ -228,6 +228,9 @@ h2 {
 .skills_content p{
     color: #616c80;
     line-height: 1.5rem;
+    max-width: 800px;
+    width: auto;
+    margin: 22px auto;
 }
 .grid-tecnologias {
     display: grid;
@@ -239,20 +242,14 @@ h2 {
     align-items: center; /* Centra verticalmente los artículos */
     padding: 0 20px; /* Espacio horizontal interno */
 }
-#skills p{
-    font-size: 16px;
-    margin-bottom: 3rem;
-    color: #616c80;
-    padding: 10px;
 
-}
 
 .grid-skill {
     background-color: var(--background-color);
     border: 2px solid var(--button-hover-text);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 10px 11px 8px rgba(0, 0, 0, 0.1);
     text-align: center; /* Centra el contenido del artículo */
 }
 
@@ -284,7 +281,7 @@ h2 {
 }
 
 .front {
-    color: #E34F26; /* Color para Frontend */
+    color:linear-gradient(90deg, #F05032, #f47c42); /* Color para Frontend */
 }
 
 .back {
@@ -297,6 +294,13 @@ h2 {
 
 .tools {
     color: #F05032; /* Color para Herramientas */
+}
+.column-skill li img {
+    transition: transform 0.3s ease; /* Transición suave */
+}
+
+.column-skill li img:hover {
+    transform: scale(1.2); /* Aumenta el tamaño al 120% cuando se pasa el ratón */
 }
 
 
@@ -352,11 +356,17 @@ footer {
         font-size: 14px;
     }
 
-   
- 
     .grid-skill{
         padding: 5px;
 
+    }
+    .skills_content p{
+        font-size: 14px;
+        text-align: justify;
+        margin: 50px;
+    }
+    .grid-tecnologias{
+        margin: 2px;
     }
     
     
