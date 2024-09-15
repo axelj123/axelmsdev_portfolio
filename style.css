@@ -347,5 +347,16 @@ footer {
     .grid-tecnologias{
         margin: 20px;
     }
- 
+    #skills p{
+        padding: 10px;
+
+    }
+    .grid-skill{
+        padding: 5px;
+
+    }
+    .column-skill img {
+        width: 32px; /* Reduce el tamaño de los iconos */
+        height: 32px; /* Mantiene la proporción del icono */
+    }
 }
