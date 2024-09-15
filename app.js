@@ -158,3 +158,16 @@ document.addEventListener('DOMContentLoaded', function () {
     .deleteAll()
     .start();
 });
+
+function toggleSkills(element) {
+  const skillsList = element.nextElementSibling;
+  const icon = element.querySelector('i');
+
+  if (skillsList.style.display === "block") {
+      skillsList.style.display = "none";
+      icon.classList.remove("rotate");
+  } else {
+      skillsList.style.display = "block";
+      icon.classList.add("rotate");
+  }
+}
